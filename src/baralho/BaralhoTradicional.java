@@ -1,6 +1,6 @@
 package baralho;
 
-import carta.CartaTradicional;
+import builder.CartaBuilder;
 import carta.Cor;
 
 public class BaralhoTradicional extends Baralho {
@@ -12,8 +12,15 @@ public class BaralhoTradicional extends Baralho {
         String[] naipes = {"\u2665", "\u2666", "\u2663", "\u2660"};
 
         for (int count = 0; count < NUMERO_DE_CARTAS; count++) {
-            cartas.add(new CartaTradicional(faces[count % 13], naipes[count / 13], 0,
-                    naipes[count / 13] == "\u2665" || naipes[count / 13] == "\u2666" ? Cor.VERMELHO : Cor.PRETO));
+            Cor cor = (naipes[count / 13].equals("\u2665") || naipes[count / 13].equals("\u2666")) ? Cor.VERMELHO : Cor.PRETO;
+
+            cartas.add(new CartaBuilder()
+                .setTipoBaralho(TipoBaralho.TRADICIONAL)
+                .setFace(faces[count % 13])
+                .setNaipe(naipes[count / 13])
+                .setCor(cor)
+                .setValor(0)
+                .make());
         }
     }
 }

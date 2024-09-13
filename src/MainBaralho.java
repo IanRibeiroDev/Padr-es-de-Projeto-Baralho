@@ -39,7 +39,6 @@ public class MainBaralho
       System.out.println("Size: " + baralho.size());
       System.out.println(baralho);
       
-   } // fim de main
-} // fim da classe DeckOfCardsTest
-
+   }
+}
 

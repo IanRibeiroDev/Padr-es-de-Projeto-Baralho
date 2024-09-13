@@ -1,48 +1,76 @@
 package baralho;
 
-import carta.CartaUno;
+import builder.CartaBuilder;
 import carta.Cor;
-
-import java.util.Arrays;
 
 public class BaralhoUno extends Baralho {
 
     @Override
     protected void criarCartas() {
-        // Cartas numeradas
-        criarCartasNumeradas(Cor.AZUL);
-        criarCartasNumeradas(Cor.AMARELO);
-        criarCartasNumeradas(Cor.VERDE);
-        criarCartasNumeradas(Cor.VERMELHO);
+        criarCartasNumeradas();
+        criarCartasEspeciais();
+        criarCuringas();
+        criarTrocaMaos();
+    }
 
-        // Cartas especiais
-        criarCartasEspeciais(Cor.AZUL);
-        criarCartasEspeciais(Cor.AMARELO);
-        criarCartasEspeciais(Cor.VERDE);
-        criarCartasEspeciais(Cor.VERMELHO);
+    private void criarCartasNumeradas() {
+        Cor[] cores = {Cor.AZUL, Cor.AMARELO, Cor.VERDE, Cor.VERMELHO};
+    
+        for (Cor cor : cores) {
+            for (int i = 0; i <= 9; i++) {
+                for (int j = 0; j < 2; j++) {
+                    cartas.add(new CartaBuilder()
+                            .setTipoBaralho(TipoBaralho.UNO)
+                            .setFace(String.valueOf(i))
+                            .setCor(cor)
+                            .setValor(i)
+                            .make());
+                }
+            }
+        }
+    }
+    
 
-        // Cartas curinga e compre 4
+    private void criarCartasEspeciais() {
+        Cor[] cores = {Cor.AZUL, Cor.AMARELO, Cor.VERDE, Cor.VERMELHO};
+        String[] especiais = {"Compre Duas", "Inverter", "Pular"};
+
+        for (Cor cor : cores) {
+            for (String especial : especiais) {
+                for (int i = 0; i < 2; i++) { 
+                    cartas.add(new CartaBuilder()
+                            .setTipoBaralho(TipoBaralho.UNO)
+                            .setFace(especial)
+                            .setCor(cor)
+                            .setValor(20)
+                            .make());
+                }
+            }
+        }
+    }
+
+    private void criarCuringas() {
         for (int i = 0; i < 4; i++) {
-            cartas.add(new CartaUno("Curinga", Cor.MULTICOR, 50));
-            cartas.add(new CartaUno("Compre quatro", Cor.MULTICOR, 50));
-        }
+            cartas.add(new CartaBuilder()
+                    .setTipoBaralho(TipoBaralho.UNO)
+                    .setFace("Curinga")
+                    .setValor(50)
+                    .make());
 
-        // Carta trocar as mãos
-        cartas.add(new CartaUno("Trocar as mãos", Cor.MULTICOR, 50));
-
-    }
-
-    private void criarCartasNumeradas(Cor cor) {
-        for (int i = 0; i <= 9; i++) {
-            cartas.add(new CartaUno(String.valueOf(i), cor, i));
-            cartas.add(new CartaUno(String.valueOf(i), cor, i));
+            cartas.add(new CartaBuilder()
+                    .setTipoBaralho(TipoBaralho.UNO)
+                    .setFace("Compre Quatro")
+                    .setValor(50)
+                    .make());
         }
     }
 
-    private void criarCartasEspeciais(Cor cor) {
-        for (String tipo : Arrays.asList("Compre Duas", "Inverter", "Pular")) {
-            cartas.add(new CartaUno(tipo, cor, 20));
-            cartas.add(new CartaUno(tipo, cor, 20));
-        }
+    private void criarTrocaMaos(){
+        cartas.add(new CartaBuilder()
+                    .setTipoBaralho(TipoBaralho.UNO)
+                    .setFace("Troca as mãos")
+                    .setValor(50)
+                    .make());
+
     }
 }

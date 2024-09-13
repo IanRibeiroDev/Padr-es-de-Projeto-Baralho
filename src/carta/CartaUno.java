@@ -2,11 +2,12 @@ package carta;
 
 public class CartaUno extends Carta {
     public CartaUno(String face, Cor cor, int valor) {
-        super(face, "", valor, cor); // Naipe não utilizado em Uno
+        super(face, "", valor, cor);
     }
 
     @Override
     public String toString() {
-        return String.format("%6s", face) + " " + cor.ansiCode() + cor.getValue() + Cor.RESET.ansiCode() + ", valor " + valor;
+        String corTexto = (cor != null) ? cor.ansiCode() + cor.getValue() + Cor.RESET.ansiCode() : "Sem cor";
+        return String.format("%6s", face) + " " + corTexto + ", valor " + valor;
     }
 }
