@@ -2,13 +2,11 @@ package carta;
 
 public abstract class Carta {
    protected String face;
-   protected String naipe;
    protected Cor cor;
    protected int valor;
 
-   public Carta(String face, String naipe, int valor, Cor cor) {
+   public Carta(String face, int valor, Cor cor) {
       this.face = face;
-      this.naipe = naipe;
       this.valor = valor;
       this.cor = cor;
    }
@@ -25,17 +23,13 @@ public abstract class Carta {
       return cor;
    }
 
-   public String getNaipe() {
-      return naipe;
-   }
-
    public void setValor(int valor) {
       this.valor = valor;
    }
 
-   @Override
-   public String toString() {
-      String corTexto = (cor != null) ? cor.ansiCode() + cor.getValue() + Cor.RESET.ansiCode() : "";
-      return String.format("%6s", face) + (corTexto.isEmpty() ? "" : " " + corTexto) + (naipe.isEmpty() ? "" : " de " + naipe) + ", valor " + valor;
+   public void setFace(String face) {
+      this.face = face;
    }
+
+   public void setCor(Cor cor) {this.cor = cor;}
 }

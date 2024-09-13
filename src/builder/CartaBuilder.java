@@ -4,28 +4,14 @@ import baralho.TipoBaralho;
 import carta.Carta;
 import carta.Cor;
 
-public class CartaBuilder {
-    private String face = "";
-    private String naipe = "";
-    private Cor cor = null;
-    private int valor = 0;
-    private TipoBaralho tipoBaralho;
+public interface CartaBuilder {
+    private String face;
+    private Cor cor;
+    private int valor;
 
-    // Define o tipo de baralho
-    public CartaBuilder setTipoBaralho(TipoBaralho tipoBaralho) {
-        this.tipoBaralho = tipoBaralho;
-        return this;
-    }
+    public void setFace(String face);
 
-    public CartaBuilder setFace(String face) {
-        this.face = face;
-        return this;
-    }
-
-    public CartaBuilder setNaipe(String naipe) {
-        this.naipe = naipe;
-        return this;
-    }
+    public CartaBuilder setNaipe(String naipe);
 
     public CartaBuilder setCor(Cor cor) {
         this.cor = cor;

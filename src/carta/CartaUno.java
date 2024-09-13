@@ -2,7 +2,7 @@ package carta;
 
 public class CartaUno extends Carta {
     public CartaUno(String face, Cor cor, int valor) {
-        super(face, "", valor, cor);
+        super(face, valor, cor);
     }
 
     @Override

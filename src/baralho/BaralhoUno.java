@@ -55,12 +55,14 @@ public class BaralhoUno extends Baralho {
                     .setTipoBaralho(TipoBaralho.UNO)
                     .setFace("Curinga")
                     .setValor(50)
+                    .setCor(Cor.MULTICOR)
                     .make());
 
             cartas.add(new CartaBuilder()
                     .setTipoBaralho(TipoBaralho.UNO)
                     .setFace("Compre Quatro")
                     .setValor(50)
+                    .setCor(Cor.MULTICOR)
                     .make());
         }
     }
@@ -70,7 +72,11 @@ public class BaralhoUno extends Baralho {
                     .setTipoBaralho(TipoBaralho.UNO)
                     .setFace("Troca as mãos")
                     .setValor(50)
+                    .setCor(Cor.MULTICOR)
                     .make());
 
+        CartaBuilderTradicional builder = new BuilderTradicional;
+        Diretor diretor = new Diretor();
+        diretor.create
     }
 }

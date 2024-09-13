@@ -11,6 +11,7 @@ public class MainBaralho
    // executa o aplicativo
    public static void main( String args[] )
    {
+
       BaralhoFactory factory = new BaralhoTradicionalFactory();
       Baralho baralho = factory.criarBaralho();
       //myDeckOfCards.shuffle(); // coloca Cards em ordem aleat�ria
