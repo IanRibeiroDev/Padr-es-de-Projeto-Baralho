@@ -2,17 +2,17 @@
 // Aplicativo de embaralhar e distribuir cartas.
 
 import baralho.Baralho;
-import baralho.BaralhoTradicional;
-import baralho.TipoBaralho;
 import factory.BaralhoFactory;
+import factory.BaralhoTradicionalFactory;
+import factory.BaralhoUnoFactory;
 
 public class MainBaralho
 {
    // executa o aplicativo
    public static void main( String args[] )
    {
-	  
-      Baralho baralho = new BaralhoTradicional();
+      BaralhoFactory factory = new BaralhoTradicionalFactory();
+      Baralho baralho = factory.criarBaralho();
       //myDeckOfCards.shuffle(); // coloca Cards em ordem aleat�ria
  
       
@@ -33,10 +33,11 @@ public class MainBaralho
       System.out.println( "Size: " + baralho.size());
       System.out.println( baralho);
 
-      Baralho baralhoUno = BaralhoFactory.criarBaralho(TipoBaralho.UNO);
-      System.out.println("\nbaralho.Baralho Uno:");
-      System.out.println("Size: " + baralhoUno.size());
-      System.out.println(baralhoUno);
+      factory = new BaralhoUnoFactory();
+      baralho = factory.criarBaralho();
+      System.out.println("\nBaralho Uno:");
+      System.out.println("Size: " + baralho.size());
+      System.out.println(baralho);
       
    } // fim de main
 } // fim da classe DeckOfCardsTest

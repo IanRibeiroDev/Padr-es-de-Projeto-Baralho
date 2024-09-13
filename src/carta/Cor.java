@@ -7,7 +7,7 @@ public enum Cor {
 	AZUL("\u001B[34m", "azul"),
 	AMARELO("\u001B[33m", "amarelo"),
 	VERDE("\u001B[32m", "verde"),
-	SEM_COR("\u001B[0m", ""); // carta.Cor para cartas curinga
+	MULTICOR("\u001B[35m", "multicor"); // Cor para cartas curinga
 
 	private final String ansiCode;
 	private final String value;

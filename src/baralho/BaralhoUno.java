@@ -23,12 +23,12 @@ public class BaralhoUno extends Baralho {
 
         // Cartas curinga e compre 4
         for (int i = 0; i < 4; i++) {
-            cartas.add(new CartaUno("Curinga", Cor.SEM_COR, 50));
-            cartas.add(new CartaUno("Compre quatro", Cor.SEM_COR, 50));
+            cartas.add(new CartaUno("Curinga", Cor.MULTICOR, 50));
+            cartas.add(new CartaUno("Compre quatro", Cor.MULTICOR, 50));
         }
 
-        // carta.Carta trocar as mãos
-        cartas.add(new CartaUno("Trocar as mãos", Cor.SEM_COR, 50));
+        // Carta trocar as mãos
+        cartas.add(new CartaUno("Trocar as mãos", Cor.MULTICOR, 50));
 
     }
 
