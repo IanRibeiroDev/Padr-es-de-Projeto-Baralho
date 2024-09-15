@@ -1,4 +1,4 @@
-package baralho;
+package Nsei;
 
 public enum TipoBaralho {
     TRADICIONAL,

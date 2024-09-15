@@ -8,16 +8,10 @@ public class CartaTradicional extends Carta {
         this.naipe = naipe;
     }
 
-    public String getNaipe() {
-        return naipe;
-    }
-
-    public void setNaipe(String naipe) {
-        this.naipe = naipe;
-    }
-
+    @Override
     public String toString() {
         String corTexto = (cor != null) ? cor.ansiCode() + cor.getValue() + Cor.RESET.ansiCode() : "";
-        return String.format("%6s", face) + (corTexto.isEmpty() ? "" : " " + corTexto) + (naipe.isEmpty() ? "" : " de " + naipe) + ", valor " + valor;
+        return String.format("%6s", face) + (corTexto.isEmpty() ? "" : " " + corTexto) + 
+               (naipe.isEmpty() ? "" : " de " + naipe) + ", valor " + valor;
     }
 }

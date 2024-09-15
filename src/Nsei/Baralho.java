@@ -1,12 +1,12 @@
-package baralho;
-
-import carta.Carta;
+package Nsei;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import factoryCartas.CartaFactory;
+
 public abstract class Baralho {
-    protected List<Carta> cartas;
+    protected List<CartaFactory> cartas;
 
     public Baralho() {
         this.cartas = new ArrayList<>();
@@ -19,7 +19,7 @@ public abstract class Baralho {
         // Implementação do método embaralhar
     }
 
-    public Carta dealCard() {
+    public CartaFactory dealCard() {
         if (cartas.isEmpty()) {
             return null;
         }
@@ -33,7 +33,7 @@ public abstract class Baralho {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         int column = 0;
-        for (Carta carta : cartas) {
+        for (CartaFactory carta : cartas) {
             column++;
             sb.append(carta.toString()).append("   ");
             if (column % 4 == 0) {

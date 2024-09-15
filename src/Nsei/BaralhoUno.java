@@ -1,4 +1,4 @@
-package baralho;
+package Nsei;
 
 import builder.CartaBuilder;
 import carta.Cor;

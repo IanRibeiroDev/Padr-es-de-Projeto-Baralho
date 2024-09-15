@@ -1,7 +1,7 @@
-package baralho;
+package Nsei;
 
 import builder.CartaBuilder;
-import carta.Cor;
+import factoryCartas.Cor;
 
 public class BaralhoTradicional extends Baralho {
     private static final int NUMERO_DE_CARTAS = 52;
