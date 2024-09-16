@@ -1,7 +1,5 @@
 package baralhos;
 
-import Nsei.Baralho;
-
 public class DiretorBaralho {
     private BaralhoBuilder builder;
 
@@ -11,8 +9,7 @@ public class DiretorBaralho {
 
     public void construirBaralho() {
         builder.reset();
-        builder.buildCartasNumericas();
-        builder.buildCartasEspeciais();
+        builder.buildCartas();
     }
 
     public Baralho getBaralho() {
