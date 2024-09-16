@@ -1,24 +1,24 @@
 import baralhos.Baralho;
-import baralhos.BaralhoTradicionalBuilder;
-import baralhos.BaralhoUnoBuilder;
-import baralhos.DiretorBaralho;
+import builder.BaralhoTradicionalBuilder;
+import builder.BaralhoUnoBuilder;
+import builder.DiretorBaralho;
 
 public class MainBaralho {
     public static void main(String[] args) {
         // Criando baralho tradicional
 
         DiretorBaralho diretor = new DiretorBaralho(new BaralhoTradicionalBuilder());
-        diretor.construirBaralho();
+        diretor.make();
         Baralho baralhoTradicional = diretor.getBaralho();
+
         System.out.println("Baralho Tradicional:");
         System.out.println("Size: " + baralhoTradicional.size());
         System.out.println(baralhoTradicional);
 
 
 
-
-        diretor = new DiretorBaralho(new BaralhoUnoBuilder());
-        diretor.construirBaralho();
+        diretor.setBuilder(new BaralhoUnoBuilder());
+        diretor.make();
         Baralho baralho = diretor.getBaralho();
         System.out.println(baralho.size());
         System.out.println("Baralho Uno:");

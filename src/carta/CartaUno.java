@@ -1,9 +1,7 @@
 package carta;
 
 public class CartaUno extends Carta {
-    public CartaUno(String face, Cor cor, int valor) {
-        super(face, valor, cor);
-    }
+    public CartaUno() {}
 
     @Override
     public String toString() {

@@ -10,13 +10,17 @@ public  class Baralho {
     protected List<Carta> cartas;
 
     public Baralho() {
-        this.cartas = new ArrayList<>();
+        this.cartas = new ArrayList<Carta>();
     }
     public int size(){
         return this.cartas.size();
     }
     public void adicionarCarta(Carta carta) {
         cartas.add(carta);
+    }
+
+    public void removerCarta(Carta carta) {
+        cartas.remove(carta);
     }
 
     @Override

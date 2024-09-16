@@ -3,10 +3,10 @@ package carta;
 public class  CartaTradicional extends Carta {
     private String naipe;
 
-    public CartaTradicional(String face, String naipe, int valor, Cor cor) {
-        super(face, valor, cor);
-        this.setNaipe(naipe);
-//        System.out.println(naipe);
+    public CartaTradicional() {}
+
+    public String getNaipe() {
+        return this.naipe;
     }
 
     public void setNaipe(String naipe) {

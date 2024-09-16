@@ -6,7 +6,8 @@ public enum Cor {
     RESET("\u001B[0m", "reset"),
     AZUL("\u001B[34m", "azul"),
     AMARELO("\u001B[33m", "amarelo"),
-    VERDE("\u001B[32m", "verde");
+    VERDE("\u001B[32m", "verde"),
+    MULTICOR("\u001B[35m", "multicor");
 
     private final String ansiCode;
     private final String value;
