@@ -9,7 +9,7 @@ public abstract class Carta {
         this.face = face;
         this.valor = valor;
         this.cor = cor;
-        System.out.println(this); // Printando ao criar
+
     }
 
     public String getFace() {

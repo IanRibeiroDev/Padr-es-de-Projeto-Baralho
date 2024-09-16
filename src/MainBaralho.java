@@ -17,12 +17,12 @@ public class MainBaralho {
 
 
 
-//        diretor = new DiretorBaralho(new BaralhoUnoBuilder());
-//        diretor.construirBaralho();
-//        Baralho baralho = diretor.getBaralho();
-//        System.out.println(baralho.size());
-//        System.out.println("Baralho Uno:");
-//        System.out.println(baralho);
+        diretor = new DiretorBaralho(new BaralhoUnoBuilder());
+        diretor.construirBaralho();
+        Baralho baralho = diretor.getBaralho();
+        System.out.println(baralho.size());
+        System.out.println("Baralho Uno:");
+        System.out.println(baralho);
 
 
     }

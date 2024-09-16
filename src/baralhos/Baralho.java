@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import carta.Carta;
+import carta.Cor;
 
 public  class Baralho {
     protected List<Carta> cartas;
@@ -18,9 +19,17 @@ public  class Baralho {
         cartas.add(carta);
     }
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        StringBuilder texto = new StringBuilder();
+        for(Carta carta : cartas){
+            texto.append(carta.toString()).append("\n");
+        }
+       return texto.toString();
+    }
 }
+
+
+
+
+
